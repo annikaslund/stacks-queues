@@ -21,7 +21,7 @@ class Stack {
 
   push(val) {
     let newNode = new Node(val);
-    
+
     if (this.last === null){
       this.first = newNode;
       this.last = newNode;
@@ -36,7 +36,10 @@ class Stack {
    * and return its value. Should throw an error if the stack is empty. */
 
   pop() {
+    let prevFirst = this.first;
+    this.head = prevFirst.next;
 
+    return prevFirst.val;
   }
 
   /** peek(): return the value of the first node in the stack. */

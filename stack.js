@@ -30,6 +30,8 @@ class Stack {
       this.first = newNode;
       newNode.next = prevFirst;
     }
+
+    this.size += 1;
   }
 
   /** pop(): remove the node from the top of the stack
@@ -38,6 +40,8 @@ class Stack {
   pop() {
     let prevFirst = this.first;
     this.head = prevFirst.next;
+
+    this.size -= 1;
 
     return prevFirst.val;
   }
@@ -51,7 +55,7 @@ class Stack {
   /** isEmpty(): return true if the stack is empty, otherwise false */
 
   isEmpty() {
-
+    return this.size === 0;
   }
 }
 

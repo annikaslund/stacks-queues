@@ -37,10 +37,12 @@ class Queue {
    * and return its value. Should throw an error if the queue is empty. */
 
   dequeue() {
+    let prevFirst = this.first;
     let nextNode = this.first.next;
     this.first = nextNode;
 
     this.size -= 1;
+    return prevFirst.val;
   }
 
   /** peek(): return the value of the first node in the queue. */
